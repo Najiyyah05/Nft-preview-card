@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript practice</title>
+</head>
+<body>
+    <h3>About me</h3>
+    <p class="name">My name is <span id="yourname"></span></p>
+    <p class="age">I am <span id="yourage"></span> years old</p>
+
+    <hr>
+    <button onclick="myFunction1()">click to sort numerically</button>
+    <button onclick="myFunction2()">click to sort alphabetically</button>
+    <p id="demo"></p>
+    <script>
+        var numbers = [23,45,6,90,33];
+        document.getElementById('demo').innerHTML= numbers;
+        function myFunction1(){
+            numbers.sort();
+            document.getElementById('demo').innerHTML = numbers;
+        }
+        function myFunction2(){
+            numbers.sort(function(a,b){return a-b;});
+            document.getElementById('demo').innerHTML = numbers;
+        }
+
+
+        function calcage(age){
+            return (2024-age);
+        }
+        document.getElementById("yourage").innerHTML= calcage(2004);
+
+        function myname() {
+            var name = {firstname:'najiyyah',lastname:'AbdurRahman'};
+            return name.firstname;
+        }
+        document.getElementById('yourname').innerHTML = myname();
+
+    </script>
+    <button onclick="this.innerHTML = Date()">The date is?</button>
+    <br><br>
+    <button onclick="getElementById('date').innerHTML = Date()">Click here to view date</button>
+    <p id="date"></p>
+
+</body>
+</html>
